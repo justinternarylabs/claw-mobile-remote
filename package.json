@@ -1,0 +1,34 @@
+{
+  "name": "@justinternarylabs/claw-mobile-remote",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reversible mobile access, private remote control, and web notifications for Claw-Empire.",
+  "type": "module",
+  "bin": {
+    "claw-mobile-remote": "bin/claw-mobile-remote.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinternarylabs/claw-mobile-remote.git"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "payload/",
+    "scripts/",
+    "docs/",
+    "test/",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check bin/claw-mobile-remote.mjs && node --check lib/installer.mjs"
+  }
+}

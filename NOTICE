@@ -1,0 +1,11 @@
+Claw Mobile Remote
+Unofficial mobile-access integration for Claw-Empire.
+
+This distribution contains modifications and source excerpts derived from
+GreenSheep01201/claw-empire, licensed under the Apache License, Version 2.0.
+Upstream: https://github.com/GreenSheep01201/claw-empire
+Validated baseline: 66a24ea7df2435ef897c48c147deb7ec572c01c2 (2.0.4).
+
+Claw-Empire names and included application icon artwork identify the upstream
+project. This add-on is independent and does not imply upstream endorsement.
+The original Apache-2.0 license is included in LICENSE.

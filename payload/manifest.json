@@ -1,0 +1,249 @@
+{
+  "schema": 1,
+  "id": "claw-mobile-remote",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/GreenSheep01201/claw-empire",
+    "commit": "66a24ea7df2435ef897c48c147deb7ec572c01c2",
+    "version": "2.0.4"
+  },
+  "patch": "mobile-remote.patch",
+  "patch_sha256": "6bbe609f5f186b90d3da1f4191f9962bcc9805b81957df05724e4b65de1da974",
+  "files": [
+    {
+      "path": ".env.example",
+      "before": "aaa4680ab352f045e688efde3d546eeb9d694d874f23887685a1336a17890242",
+      "after": "44c1897e640cda3c88b6d9460f58aea4bcef00660d51fd9eb934442ef0d469ef"
+    },
+    {
+      "path": ".gitignore",
+      "before": "ad2a7afd5319a27bd081a9078a39618011939886ad965ca3c16b2fc96a3df10e",
+      "after": "de73a8f134e5a40c8c2b777a06ab7c9f3a334a97d9b92f9852f44820ce5d7e35"
+    },
+    {
+      "path": "index.html",
+      "before": "eb904c37777fd24d3bf3fdf0dd5146eef6f0868eb09abe2f6d00d35395754d06",
+      "after": "b46d36b49177fcabafe6e785ea239ce3c3b389e9c5b1e8b5ae2d8aa8311ca55b"
+    },
+    {
+      "path": "public/claw-icon-180.png",
+      "before": null,
+      "after": "43551256242630658c3c0ea41f1916269804fe9059c49e7c79a0dfe6db4574fc"
+    },
+    {
+      "path": "public/claw-icon-192.png",
+      "before": null,
+      "after": "d25a55fa55d14064adbc58eae28beb2f8173018fc4fa5936a4f191743a20390d"
+    },
+    {
+      "path": "public/claw-icon-512.png",
+      "before": null,
+      "after": "bd83d97c81cd5dff6870fa76f076b8160009bd30562b55c0f21cc203df42ad02"
+    },
+    {
+      "path": "public/claw-sw.js",
+      "before": null,
+      "after": "21142e7265913027b7a675b2c9d556f2dedca077dd40c5183a05a49f8257b3a1"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "before": null,
+      "after": "1407216ed93392dcb761afb032ed8e2c62f57fbb311cecca400a971758d19891"
+    },
+    {
+      "path": "server/modules/lifecycle.ts",
+      "before": "579840fc87a9c09844d482faffae3bce014d42b08976b6e3b1e1cea617f5c630",
+      "after": "2aa182445d429afa322c103d1e5b6b78eb5c34e5dea8e52ac91789e581e447b3"
+    },
+    {
+      "path": "server/modules/routes/ops/messages/decision-inbox-routes.ts",
+      "before": "50bc21134aaaacad9fc4bdd4b1d42120fa213c99faacfa38b99d5e9651d918c9",
+      "after": "372d5b9843f231893607c230db3c0af35e2d4d239068c3395f8dd4f6bbd5f0aa"
+    },
+    {
+      "path": "server/modules/workflow/core.ts",
+      "before": "04a3735323f69d4ecd774d92303c81fb4d0613b2075e4be3e37475a0cb462b7d",
+      "after": "363f1b87f41b0beae95be194270a7e1fdb4042d329a3bac18976f708837591b5"
+    },
+    {
+      "path": "server/modules/workflow/orchestration/run-complete-handler.ts",
+      "before": "c789550ff32041c0dd7a575aaa43423013596ed79fbe0a49ec9d69774691cbab",
+      "after": "0d23e025d1bd17f0853f7be5310a0099350344625b3abc21739abf215fdbaa76"
+    },
+    {
+      "path": "server/notifications/push-service.test.ts",
+      "before": null,
+      "after": "1b71a3be72f73d8da2f1d7d915998917361592cd23536b74f46173d086dd422e"
+    },
+    {
+      "path": "server/notifications/push-service.ts",
+      "before": null,
+      "after": "dd4fd7323fda5c13320b714526a41d1c6b07a31ba77035c38d84b7f7e0e7f4bc"
+    },
+    {
+      "path": "server/security/auth.test.ts",
+      "before": "cb2ac7e7c39625da9bc91b4dd2834b02415688c893e06b0c97863f10b342960c",
+      "after": "6d2e12751f1ae598db87506defc129aa98b8ecfdc302b3887adcf7d6f31ccff3"
+    },
+    {
+      "path": "server/security/auth.ts",
+      "before": "f0172d03e98353373bcd0b5978c5b94174df5cf9a308e214e300e0bc8f76e31c",
+      "after": "cd498f6c5b963ddb30a2f85a6f3a63116f9f5e88e83b2b1d14ed4e755da2dbed"
+    },
+    {
+      "path": "server/security/device-sessions.test.ts",
+      "before": null,
+      "after": "24923d8cfadf5b4bd90f3ae98cb31d74213cbfddd09f90e9f5167420ad3d741b"
+    },
+    {
+      "path": "server/security/device-sessions.ts",
+      "before": null,
+      "after": "99930a09f855087202fff12f677eb63754028f3a702b15919376f35344585e15"
+    },
+    {
+      "path": "src/api.test.ts",
+      "before": "e429b54bb0e1d5258798e7355507edde72fb2f47846b24c01212da1c0d2e6cd3",
+      "after": "3c4154b6f9dc304502a895cee5af4d34e3099620ec27403293ef7e99449a7d36"
+    },
+    {
+      "path": "src/api/core.ts",
+      "before": "0b603ecfb250589717a7834eee42f147b1dc91bc48f76ee60b6f452e510d8f23",
+      "after": "d1e623842561aeaaf3f26fd4ade57d7e7afa098f31d32fadd2f62954270ddaae"
+    },
+    {
+      "path": "src/app/AppHeaderBar.tsx",
+      "before": "abb0c90b19da2d0bbf72ca0dcaaecb84ff6afbd543ff6bc767422568e75df492",
+      "after": "828d9511f9db5954e9a4341c4ee3c694ec61051bfc56efb7b501ca685897dc61"
+    },
+    {
+      "path": "src/app/AppMainLayout.tsx",
+      "before": "fa16cc59bc2ae332203048a79dcb1c710d10e9ed5ad10f708b4354e4ad57447c",
+      "after": "bc5992f0ef38f43af388ad077564ef4e1ca784b7415b5201ceaf9f5170e3d1f5"
+    },
+    {
+      "path": "src/components/ChatPanel.tsx",
+      "before": "3af0cdb0b6f6e703c3cfe1c28ed552136ad3583eb9f74a94182c104bb42a17b3",
+      "after": "c0610285dcc22f20fbd77692632b5579b8f8cab4c277caf55feaf72e9d311976"
+    },
+    {
+      "path": "src/components/GridIcon.tsx",
+      "before": null,
+      "after": "243e1ea419e8b45718b1a6876443e5929b8bf6262ceafb02221a9f58b4e44591"
+    },
+    {
+      "path": "src/components/GridMobileCommand.test.tsx",
+      "before": null,
+      "after": "9fc41e7d92fba5cf54244b6bbff737a93dc5a43daf06296e85772516d7e80183"
+    },
+    {
+      "path": "src/components/GridMobileCommand.tsx",
+      "before": null,
+      "after": "2367032cebfe2edd3b60ec723381c7707eef379e3917367bdcfb4c54d2acaf3e"
+    },
+    {
+      "path": "src/components/GridMobileGame.test.tsx",
+      "before": null,
+      "after": "470eb9b4823b9038403636944994fb38fb331dce4803704963ea0f77ff028e8c"
+    },
+    {
+      "path": "src/components/GridMobileGame.tsx",
+      "before": null,
+      "after": "7b7289dd021f5226028a959a639125fc06a68e6b73ca25f778e9a5550d36807d"
+    },
+    {
+      "path": "src/components/GridMobileNav.tsx",
+      "before": null,
+      "after": "71a212d22bc0731c98cf332a9f5b35ea07ff3464bb10e678d72c3714f834e67a"
+    },
+    {
+      "path": "src/components/OfficeView.tsx",
+      "before": "d9c8cc198cdbe64216b75de4f8992b0f35aa852d2c8b7df87b4f0608360b3755",
+      "after": "33ea05a8e65b42a714f270badb7a9c3b80b38afe87a4552809b63933ace598a2"
+    },
+    {
+      "path": "src/components/RemoteAccessGate.test.tsx",
+      "before": null,
+      "after": "44f50886aa0a7ba85e25a6d608972da8745dbde127650aab1f834d6f2164a388"
+    },
+    {
+      "path": "src/components/RemoteAccessGate.tsx",
+      "before": null,
+      "after": "69d3d95a6986921e7709e5b2e14efcd91b27007c455e1af3fa84a0b618bdfc74"
+    },
+    {
+      "path": "src/components/agent-manager/AgentFormModal.tsx",
+      "before": "b0a8b64e992e91e8f0fa94a9bf9d9f4c2d97eedf4159b277f7eabaf8645844d7",
+      "after": "14916db4d1e17b4ddd3a659dd433b5c9f8966818e039da65b32d9acb3aa1e197"
+    },
+    {
+      "path": "src/components/office-view/VirtualPadOverlay.test.tsx",
+      "before": null,
+      "after": "cc8cbd68662433ef8f27dadfaa2f26eedc3063fabd2d695bebc9bce109c0775b"
+    },
+    {
+      "path": "src/components/office-view/VirtualPadOverlay.tsx",
+      "before": "8af7c5884846286d81a238b045738ae6b24b789cdf247e7b3f417b26b870db61",
+      "after": "ee1b7e07c2a7018a0793d000baa543bd16556b6c429c840a5acaa28ec718ae63"
+    },
+    {
+      "path": "src/components/office-view/model.ts",
+      "before": "1ed41afd11ec3a7acba7fb57101a1125e247738f6214c60bc78f53dd3da449fe",
+      "after": "765075035dae8fde3a56d924bd26acfa1c7c8cdced6144e5e02bf4b562265ef9"
+    },
+    {
+      "path": "src/components/settings/BrowserNotificationsPanel.test.tsx",
+      "before": null,
+      "after": "e6ec904dbd8bb826aa269f8729ac8a8ec6a4cc737ed9bb6b3df0516f85469c1c"
+    },
+    {
+      "path": "src/components/settings/BrowserNotificationsPanel.tsx",
+      "before": null,
+      "after": "9cd84ec98add07a56eeb6df9c249bb46aeb752c2297d129da31859941337faae"
+    },
+    {
+      "path": "src/components/settings/GeneralSettingsTab.tsx",
+      "before": "1ec99d75ffa5766497c33f79b1405a4b4159ba98f38d87bab8d6c3ab4ada3d82",
+      "after": "e3b0e95c468f77a6f0e418ac8cbd05c32f1ceb46c5f2a8f8231fc49c5239fd9f"
+    },
+    {
+      "path": "src/components/settings/RemoteAccessPanel.test.tsx",
+      "before": null,
+      "after": "7d88864885b3a18687aa1cbf81b4034dfde68d92cb2306d293c20df12bf01eed"
+    },
+    {
+      "path": "src/components/settings/RemoteAccessPanel.tsx",
+      "before": null,
+      "after": "2724ec1e796bc6f0a91575288f51e7c161673b31f50d07c08eb9471432169b35"
+    },
+    {
+      "path": "src/index.css",
+      "before": "b04b290e4f9f5e2e9df7ee20e81ed01885fb42c576376e0680bb43ae2a64bad3",
+      "after": "785a6c2d7f2715f36ca9e81b44a65b3e111444d20b4b9d6f9c1797eb3c560ef7"
+    },
+    {
+      "path": "src/main.tsx",
+      "before": "4303faa20c8665f36331876c6ffcf3f30479e18eeca50f18647991b7f0fdbbaf",
+      "after": "f54cab25f060ee95e30c2441a7aad1fa2dc943df2f718fb8df533e4b6b3f4b4e"
+    },
+    {
+      "path": "src/styles/grid-access.css",
+      "before": null,
+      "after": "ba351874687c39e05946d83f7288d9cf6bfc33e44c6e9f74470484695588533e"
+    },
+    {
+      "path": "src/styles/grid-mobile.css",
+      "before": null,
+      "after": "5ea7f348736b18a16c9c8927f3078aae6c8a00670edda640f75123e0aa7bdf74"
+    }
+  ],
+  "dependencies": {
+    "runtime": {
+      "web-push": "^3.6.7",
+      "qrcode": "^1.5.4"
+    },
+    "dev": {
+      "@types/web-push": "^3.6.4",
+      "@types/qrcode": "^1.5.6"
+    }
+  }
+}

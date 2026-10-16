@@ -1,6 +1,6 @@
 # Installer CLI
 
-Requires Node.js 22.13 or newer, Git, and an existing Claw-Empire Git checkout. Version 1.0.0 targets Claw-Empire **2.0.4**, based on commit `66a24ea7df2435ef897c48c147deb7ec572c01c2`. Other source revisions are accepted only when the version matches and the complete patch passes Git's applicability check. Future versions are not assumed compatible.
+Requires Node.js 22.13 or newer, Git, and an existing Claw-Empire Git checkout. Version 1.0.1 targets Claw-Empire **2.0.4**, based on commit `66a24ea7df2435ef897c48c147deb7ec572c01c2`. Other source revisions are accepted only when the version matches and the complete patch passes Git's applicability check. Future versions are not assumed compatible.
 
 From this add-on directory, inspect the intended checkout first:
 

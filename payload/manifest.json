@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "id": "claw-mobile-remote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "upstream": {
     "repository": "https://github.com/GreenSheep01201/claw-empire",
     "commit": "66a24ea7df2435ef897c48c147deb7ec572c01c2",
     "version": "2.0.4"
   },
   "patch": "mobile-remote.patch",
-  "patch_sha256": "6bbe609f5f186b90d3da1f4191f9962bcc9805b81957df05724e4b65de1da974",
+  "patch_sha256": "eb3fca41d353868f6c26d956a7266eccb020d92ff874ad46d3798b0660e7c0eb",
   "files": [
     {
       "path": ".env.example",
@@ -158,7 +158,7 @@
     {
       "path": "src/components/OfficeView.tsx",
       "before": "d9c8cc198cdbe64216b75de4f8992b0f35aa852d2c8b7df87b4f0608360b3755",
-      "after": "33ea05a8e65b42a714f270badb7a9c3b80b38afe87a4552809b63933ace598a2"
+      "after": "78f6d5f022186c671b9b370d4445288c5de65a55d55616f2efcf959cf4074f4b"
     },
     {
       "path": "src/components/RemoteAccessGate.test.tsx",
@@ -233,7 +233,7 @@
     {
       "path": "src/styles/grid-mobile.css",
       "before": null,
-      "after": "5ea7f348736b18a16c9c8927f3078aae6c8a00670edda640f75123e0aa7bdf74"
+      "after": "190d1969e5896ba4f04d70cef2c3f04752926df2ddd7a776475f24b820d39d68"
     }
   ],
   "dependencies": {

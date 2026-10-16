@@ -7,6 +7,7 @@ import { createHash } from 'node:crypto';
 const source = process.argv[2];
 if (!source) throw new Error('Usage: node scripts/build-payload.mjs <reviewed-upstream-working-tree>');
 const output = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../payload');
+const version = JSON.parse(fs.readFileSync(path.join(output, '../package.json'), 'utf8')).version;
 const git = (...args) => {
   const result = spawnSync('git', args, { cwd: source, maxBuffer: 16 * 1024 * 1024 });
   if (result.status !== 0) throw new Error(result.stderr.toString());
@@ -23,7 +24,7 @@ for (const name of files) {
 }
 const patch = git('diff', '--binary', '--full-index', 'HEAD', '--', ...files);
 const manifest = {
-  schema: 1, id: 'claw-mobile-remote', version: '1.0.0',
+  schema: 1, id: 'claw-mobile-remote', version,
   upstream: { repository: 'https://github.com/GreenSheep01201/claw-empire', commit: baseline, version: '2.0.4' },
   patch: 'mobile-remote.patch', patch_sha256: sha(patch),
   files: files.map(name => {

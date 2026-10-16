@@ -3536,7 +3536,7 @@ index 0000000000000000000000000000000000000000..cdb6720db6511719922ca5295d7486e5
 +  );
 +}
 diff --git a/src/components/OfficeView.tsx b/src/components/OfficeView.tsx
-index 6b60f8075d8312ee1df5168e0da5b707c72814ed..56f3e2c4a804f43233ac7f49678b114e5f81649a 100644
+index 6b60f8075d8312ee1df5168e0da5b707c72814ed..dffa0cd5acd1f69cd0c2a11ee8f048f169d02b49 100644
 --- a/src/components/OfficeView.tsx
 +++ b/src/components/OfficeView.tsx
 @@ -35,6 +35,7 @@ import { useOfficePixiRuntime } from "./office-view/useOfficePixiRuntime";
@@ -3547,7 +3547,46 @@ index 6b60f8075d8312ee1df5168e0da5b707c72814ed..56f3e2c4a804f43233ac7f49678b114e
    departments,
    agents,
    tasks,
-@@ -247,6 +248,25 @@ export default function OfficeView({
+@@ -176,15 +177,16 @@ export default function OfficeView({
+     const containerRect = container.getBoundingClientRect();
+     const scaleX = officeWRef.current > 0 ? container.clientWidth / officeWRef.current : 1;
+     const scaleY = totalHRef.current > 0 ? container.clientHeight / totalHRef.current : scaleX;
++    const gameViewport = container.closest<HTMLElement>(".grid-office-game");
+ 
+-    let hostX = scrollHostXRef.current;
+-    if (!hostX || !canScrollOnAxis(hostX, "x")) {
++    let hostX = gameViewport ?? scrollHostXRef.current;
++    if (!hostX || (!gameViewport && !canScrollOnAxis(hostX, "x"))) {
+       hostX = findScrollContainer(container, "x") ?? (document.scrollingElement as HTMLElement | null);
+       scrollHostXRef.current = hostX;
+     }
+ 
+-    let hostY = scrollHostYRef.current;
+-    if (!hostY || !canScrollOnAxis(hostY, "y")) {
++    let hostY = gameViewport ?? scrollHostYRef.current;
++    if (!hostY || (!gameViewport && !canScrollOnAxis(hostY, "y"))) {
+       hostY = findScrollContainer(container, "y") ?? (document.scrollingElement as HTMLElement | null);
+       scrollHostYRef.current = hostY;
+     }
+@@ -232,6 +234,17 @@ export default function OfficeView({
+     }
+   }, []);
+ 
++  useEffect(() => {
++    if (!fullscreen || !showVirtualPad) return;
++    const viewport = containerRef.current?.closest<HTMLElement>(".grid-office-game");
++    if (!viewport) return;
++    // A rotation or changing browser chrome can resize height without rebuilding the scene.
++    const observer = new ResizeObserver(followCeoInView);
++    observer.observe(viewport);
++    followCeoInView();
++    return () => observer.disconnect();
++  }, [fullscreen, showVirtualPad, sceneRevision, followCeoInView]);
++
+   useEffect(() => {
+     const updateVirtualPadVisibility = () => {
+       const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+@@ -247,6 +260,25 @@ export default function OfficeView({
      if (!showVirtualPad) clearVirtualMovement();
    }, [showVirtualPad, clearVirtualMovement]);
  
@@ -3573,7 +3612,7 @@ index 6b60f8075d8312ee1df5168e0da5b707c72814ed..56f3e2c4a804f43233ac7f49678b114e
    useEffect(
      () => () => {
        clearVirtualMovement();
-@@ -391,31 +411,37 @@ export default function OfficeView({
+@@ -391,31 +423,37 @@ export default function OfficeView({
    });
  
    return (
@@ -5000,10 +5039,10 @@ index 0000000000000000000000000000000000000000..79b1a7169f738f90d690e2f23e4ded14
 +}
 diff --git a/src/styles/grid-mobile.css b/src/styles/grid-mobile.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..19c1174afdca1a858ba119f45f8eb9f47fef5290
+index 0000000000000000000000000000000000000000..e745d96dd154ef3d51e6a9033556071054da0315
 --- /dev/null
 +++ b/src/styles/grid-mobile.css
-@@ -0,0 +1,810 @@
+@@ -0,0 +1,812 @@
 +/* Isolated add-on tokens do not change Claw-Empire's native theme. */
 +[data-theme="light"] {
 +  --claw-mobile-accent: #1d4ed8;
@@ -5657,6 +5696,8 @@ index 0000000000000000000000000000000000000000..19c1174afdca1a858ba119f45f8eb9f4
 +}
 +.grid-mobile-game .grid-office-canvas-wrap {
 +  margin: 0;
++  /* Let the camera track the world edges without pinning the user under the HUD/pad. */
++  padding-block: 45dvh 55dvh;
 +}
 +.grid-mobile-game .grid-office-viewport > :not(.grid-office-canvas-wrap) {
 +  display: none;

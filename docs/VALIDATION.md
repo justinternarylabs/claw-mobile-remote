@@ -1,5 +1,11 @@
 # Release 1.0.0 validation
 
+## Camera correction in 1.0.1
+
+Added full-screen vertical camera gutters and viewport resize tracking. The avatar stays at the 45% height anchor at both world boundaries and follows immediately when leaving an edge. Checks cover 390×844 and 430×932 portrait, 844×390 landscape, 320×568 narrow portrait, and height-only resizing. The tall portrait case has a map shorter than its viewport. The correction was applied to both the customized running installation and the portable upstream overlay. Package tests, affected mobile component tests, production builds, and installer/removal checks were repeated; backend source is unchanged.
+
+The following records the broader original release validation.
+
 Baseline: official Claw-Empire 2.0.4, commit `66a24ea7df2435ef897c48c147deb7ec572c01c2`.
 
 Environment: Windows, Node 24.16, pnpm via Corepack. The source extraction and the installation check used separate fresh upstream checkouts. No personalized theme, agent roster, CLI integration, provider credentials, production database, or private network configuration was used.

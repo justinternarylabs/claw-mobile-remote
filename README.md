@@ -14,7 +14,7 @@ Each friend runs their **own Claw installation on their own PC**, connects their
 
 ## Compatibility
 
-Version 1.0.0 targets **Claw-Empire 2.0.4**, upstream commit `66a24ea7df2435ef897c48c147deb7ec572c01c2`. It was built and tested against a fresh upstream checkout, without the author's customized theme or integrations. It is not a promise of compatibility with every historical or future Claw release.
+Version 1.0.1 targets **Claw-Empire 2.0.4**, upstream commit `66a24ea7df2435ef897c48c147deb7ec572c01c2`. It was built and tested against a fresh upstream checkout, without the author's customized theme or integrations. It is not a promise of compatibility with every historical or future Claw release.
 
 `doctor` checks the actual source patch before installation. Compatible local edits outside changed patch hunks are preserved. A conflicting file or unsupported Claw version stops installation before source changes. Do not force a patch over a conflict; use a matching Claw version or port/review the changes first.
 
@@ -104,6 +104,8 @@ The phone has operator access to your Claw instance, including its task controls
 ## Daily use
 
 Open the Home Screen app with Tailscale connected. The phone navigation exposes office, tasks, agents, chat, and settings. Enter the full-screen office to move around and interact; use **Return** or browser Back to leave it. The movement pad supports press-and-hold and clears input on release, cancellation, or loss of focus.
+
+The camera follows through the top and bottom of the map, with extra travel beyond world edges to keep the avatar away from the fixed HUD and controls. It recenters after rotation or a changing browser viewport. If upgrading from 1.0.0, uninstall that version with its original CLI, then install 1.0.1 and rebuild.
 
 Notifications use generic event summaries rather than task prompts or agent output. Apple/Google/Mozilla push infrastructure still transports the encrypted notification to the device. Claw and the PC must be running when an event occurs; this is not an offline task runner. Keep Tailscale connected when opening the app or following a notification. OS Focus modes, permissions, and delivery delays can affect alerts.
 
